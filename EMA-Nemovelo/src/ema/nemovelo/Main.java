@@ -15,6 +15,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Bonjour");
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VueConnection().setVisible(true);
+            }
+        });
     }
 }
