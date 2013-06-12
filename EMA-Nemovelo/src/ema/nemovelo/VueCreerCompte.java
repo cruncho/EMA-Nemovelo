@@ -147,8 +147,8 @@ public class VueCreerCompte extends javax.swing.JFrame {
         utilisateur.setPassword(new String (jPasswordField1.getPassword()));
         System.out.println("Infos : Nouveau compte ajoute. Nom: "+utilisateur.getNom()+" Prenom: "+utilisateur.getPrenom()+" Login: "+utilisateur.getLogin()+" Password: "+utilisateur.getPassword());
         
-        ControleurConnectionUtilisateurs controleurConnectionUtilisateur = new ControleurConnectionUtilisateurs();
-        controleurConnectionUtilisateur.traiterDemandeUtilisateur(utilisateur);
+        ControleurCreationCompte ControleurCreationCompte = new ControleurCreationCompte();
+        ControleurCreationCompte.traiterDemandeUtilisateur(utilisateur);
         
         // Fermerture fenetre + affichage conenxion
         java.awt.EventQueue.invokeLater(new Runnable() {

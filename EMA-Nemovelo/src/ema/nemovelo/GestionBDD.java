@@ -4,12 +4,10 @@
  */
 package ema.nemovelo;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
 
 /**
  *
@@ -43,6 +41,19 @@ public class GestionBDD {
 
         } catch (SQLException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }     
+    }
+    
+    public ResultSet selectsql(String sql) {
+            ResultSet resultats = null;
+        try {
+        Statement stmt = conn.createStatement();
+        resultats = stmt.executeQuery(sql);
+        } 
+        catch (SQLException ex) {
+        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
+        return (resultats);
+        
     }
 }

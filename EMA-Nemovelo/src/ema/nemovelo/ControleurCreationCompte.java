@@ -8,7 +8,7 @@ package ema.nemovelo;
  *
  * @author Clément
  */
-public class ControleurConnectionUtilisateurs {
+public class ControleurCreationCompte {
     
     
     public void traiterDemandeUtilisateur(Utilisateurs utilisateur) {
