@@ -15,6 +15,8 @@ public class VueCreerCompte extends javax.swing.JFrame {
      */
     public VueCreerCompte() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Créer Compte");
     }
 
     /**
@@ -74,9 +76,9 @@ public class VueCreerCompte extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jTextField1.setBounds(110, 10, 70, 20);
+        jTextField1.setBounds(110, 10, 100, 20);
         jLayeredPane2.add(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jTextField2.setBounds(110, 40, 70, 20);
+        jTextField2.setBounds(110, 40, 100, 20);
         jLayeredPane2.add(jTextField2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +86,7 @@ public class VueCreerCompte extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jTextField3.setBounds(110, 70, 70, 20);
+        jTextField3.setBounds(110, 70, 100, 20);
         jLayeredPane2.add(jTextField3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jButton1.setLabel("Valider");
@@ -100,7 +102,7 @@ public class VueCreerCompte extends javax.swing.JFrame {
         });
         jButton1.setBounds(80, 130, 90, 23);
         jLayeredPane2.add(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jPasswordField1.setBounds(110, 100, 70, 20);
+        jPasswordField1.setBounds(110, 100, 100, 20);
         jLayeredPane2.add(jPasswordField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLayeredPane2.setBounds(20, 30, 250, 160);
@@ -140,7 +142,7 @@ public class VueCreerCompte extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        Utilisateurs utilisateur = new Utilisateurs();
+        Utilisateurs utilisateur = Utilisateurs.getInstance();
         utilisateur.setLogin(jTextField3.getText());
         utilisateur.setNom(jTextField1.getText());
         utilisateur.setPrenom(jTextField2.getText());

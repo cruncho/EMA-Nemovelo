@@ -10,11 +10,19 @@ package ema.nemovelo;
  */
 public class Utilisateurs {
     
+        private static Utilisateurs instance = new Utilisateurs();
+    
+    public static Utilisateurs getInstance() {
+        return instance;
+    }
+    
    String nom; 
    String prenom;
    String login; 
    String password;
    int fonction; 
+   int id;
+   int location;
 
     public Utilisateurs() {
         
@@ -60,8 +68,21 @@ public class Utilisateurs {
     public void setFonction(int fonction) {
         this.fonction = fonction;
     }
-   
-   
-   
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
+
 }

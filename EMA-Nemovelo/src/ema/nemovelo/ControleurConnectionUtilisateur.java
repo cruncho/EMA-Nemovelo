@@ -14,10 +14,10 @@ import java.sql.SQLException;
  */
 public class ControleurConnectionUtilisateur {
     
-      public int connectionUtilisateur(Utilisateurs utilisateur) throws SQLException {
+      public int miseAJourUtilisateur(Utilisateurs utilisateur) throws SQLException {
           
             StringBuilder sb = new StringBuilder();
-            sb.append("SELECT `login`,`password` FROM `utilisateurs` WHERE `login`='");
+            sb.append("SELECT `user_id`, `login`,`password`,`location`,`nom`, `prenom` FROM `utilisateurs` WHERE `login`='");
             sb.append(utilisateur.getLogin());
             sb.append("' AND `password` ='");
             sb.append(utilisateur.getPassword());
@@ -32,6 +32,10 @@ public class ControleurConnectionUtilisateur {
                  id++;
               //  System.out.println("Login "+result.getString("login"));
               //  System.out.println("Password "+result.getString("password"));
+                 utilisateur.setId(result.getInt("user_id"));
+                 utilisateur.setLocation(result.getInt("location"));
+                 utilisateur.setNom(result.getString("nom"));
+                 utilisateur.setPrenom(result.getString("prenom"));
                  
                 
               }
