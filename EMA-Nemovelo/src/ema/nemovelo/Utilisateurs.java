@@ -23,6 +23,7 @@ public class Utilisateurs {
    int fonction; 
    int id;
    int location;
+   boolean location_en_cours;
 
     public Utilisateurs() {
         
@@ -83,6 +84,14 @@ public class Utilisateurs {
 
     public void setLocation(int location) {
         this.location = location;
+    }
+
+    public boolean isLocation_en_cours() {
+        return location_en_cours;
+    }
+
+    public void setLocation_en_cours(boolean location_en_cours) {
+        this.location_en_cours = location_en_cours;
     }
 
 }

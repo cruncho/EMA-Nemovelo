@@ -21,19 +21,10 @@ public class ControleurStation {
 
             GestionBDD gestionBDD = GestionBDD.getInstance();
             ResultSet result_station = gestionBDD.selectsql(sb.toString());
-            
-        
-            
-             while(result_station.next()){
-                                               
+
+             while(result_station.next()){                              
                  station.setNom(result_station.getString("Nom"));
                  station.setBornes(result_station.getInt("bornes"));
-                 
-                
-              }
-            // System.out.println("ID: "+id);
-             
-          
+             }
     }
-    
 }

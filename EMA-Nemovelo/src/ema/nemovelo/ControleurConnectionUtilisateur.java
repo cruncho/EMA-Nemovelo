@@ -17,7 +17,7 @@ public class ControleurConnectionUtilisateur {
       public int miseAJourUtilisateur(Utilisateurs utilisateur) throws SQLException {
           
             StringBuilder sb = new StringBuilder();
-            sb.append("SELECT `user_id`, `login`,`password`,`location`,`nom`, `prenom` FROM `utilisateurs` WHERE `login`='");
+            sb.append("SELECT `user_id`, `login`,`password`,`location`,`nom`, `prenom`,`en_cours` FROM `utilisateurs` WHERE `login`='");
             sb.append(utilisateur.getLogin());
             sb.append("' AND `password` ='");
             sb.append(utilisateur.getPassword());
@@ -36,6 +36,7 @@ public class ControleurConnectionUtilisateur {
                  utilisateur.setLocation(result.getInt("location"));
                  utilisateur.setNom(result.getString("nom"));
                  utilisateur.setPrenom(result.getString("prenom"));
+                 utilisateur.setLocation_en_cours(result.getBoolean("en_cours"));
                  
                 
               }

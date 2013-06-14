@@ -34,8 +34,44 @@ public class VueStation extends javax.swing.JFrame {
         }
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setTitle("Gestion Compte");
+        this.setTitle("Station "+station.getNom());
         jLabel2.setText(station.getNom());
+        
+        
+        int borne_id =1;
+        Bornes Borne1 = new Bornes(borne_id, station.getId());    
+        borne_id=2;
+        Bornes Borne2 = new Bornes(borne_id,station.getId());
+        borne_id=3;
+        Bornes Borne3 = new Bornes(borne_id,station.getId());
+        borne_id=4;
+        Bornes Borne4 = new Bornes(borne_id,station.getId());
+        borne_id=5;
+        Bornes Borne5 = new Bornes(borne_id,station.getId());
+        borne_id=6;
+        Bornes Borne6 = new Bornes(borne_id,station.getId());
+        borne_id=7;
+        Bornes Borne7 = new Bornes(borne_id,station.getId());
+        borne_id=8;
+        Bornes Borne8 = new Bornes(borne_id,station.getId());
+        
+        ControleurBorne ControleurBorne = new ControleurBorne();
+        
+        try {
+            ControleurBorne.miseAJourBorne(Borne1);
+            } 
+        catch (SQLException ex) {
+            Logger.getLogger(VueConnection.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+         if (Borne1.isEtat()==true)  
+        {
+            jButton1.setForeground(Color.green);
+        }
+        else 
+        {
+            jButton1.setForeground(Color.red);
+        }
         
     }
 
@@ -64,7 +100,6 @@ public class VueStation extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setForeground(new java.awt.Color(51, 255, 0));
         jButton1.setText("Borne 1 ");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -254,14 +289,9 @@ public class VueStation extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        if (jButton1.getForeground() == Color.red)
-        {
-            jButton1.setForeground(Color.green);
-        }
-        else 
-        {
-            jButton1.setForeground(Color.red);
-        }
+        
+
+       
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
