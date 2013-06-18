@@ -102,7 +102,7 @@ public class VueCompte extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Que voulez-vous faire ?");
 
-        jButton1.setText("Nord");
+        jButton1.setText("Centre");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -134,7 +134,7 @@ public class VueCompte extends javax.swing.JFrame {
 
         jLabel7.setText("Plan de la ville");
 
-        jButton2.setText("Centre");
+        jButton2.setText("Nord");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
