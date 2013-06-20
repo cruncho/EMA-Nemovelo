@@ -12,6 +12,8 @@ public class ControleurCreationCompte {
     
     
     public void traiterDemandeUtilisateur(Utilisateurs utilisateur) {
+       
+        
         
          StringBuilder sb = new StringBuilder();
           sb.append("insert into `utilisateurs`(`nom`,`prenom`,`login`,`password`) ");
@@ -27,6 +29,7 @@ public class ControleurCreationCompte {
 
             GestionBDD gestionBDD = GestionBDD.getInstance();
             gestionBDD.executeSql(sb.toString());
+        
     }
     
 }

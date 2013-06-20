@@ -4,6 +4,8 @@
  */
 package ema.nemovelo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Clément
@@ -142,6 +144,8 @@ public class VueCreerCompte extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        if (jTextField3.getText().length() >= 3 && jTextField1.getText().length() >= 3 && jTextField2.getText().length() >= 3 && jPasswordField1.getPassword().length >= 3) {
+
         Utilisateurs utilisateur = Utilisateurs.getInstance();
         utilisateur.setLogin(jTextField3.getText());
         utilisateur.setNom(jTextField1.getText());
@@ -152,6 +156,10 @@ public class VueCreerCompte extends javax.swing.JFrame {
         ControleurCreationCompte ControleurCreationCompte = new ControleurCreationCompte();
         ControleurCreationCompte.traiterDemandeUtilisateur(utilisateur);
         
+        
+        
+        
+        
         // Fermerture fenetre + affichage conenxion
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -159,6 +167,9 @@ public class VueCreerCompte extends javax.swing.JFrame {
             }
         });
         this.dispose();
+      }
+        else 
+          JOptionPane.showMessageDialog(null,"Veuillez remplir tous les champs avec au moins 3 caracteres");  
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
