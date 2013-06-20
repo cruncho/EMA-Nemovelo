@@ -49,6 +49,11 @@ public class VuePlanNord extends javax.swing.JFrame {
         jLayeredPane1.add(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jLabel4.setBounds(300, 340, 16, 16);
         jLayeredPane1.add(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -98,6 +103,17 @@ public class VuePlanNord extends javax.swing.JFrame {
             });
              this.dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        // borne
+        final int id = 5;
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VueStation(id).setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
