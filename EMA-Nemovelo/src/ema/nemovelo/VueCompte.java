@@ -152,6 +152,11 @@ public class VueCompte extends javax.swing.JFrame {
         jButton4.setMaximumSize(new java.awt.Dimension(65, 23));
         jButton4.setMinimumSize(new java.awt.Dimension(65, 23));
         jButton4.setPreferredSize(new java.awt.Dimension(65, 23));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setText("Ouest");
         jButton5.setMaximumSize(new java.awt.Dimension(65, 23));
@@ -359,6 +364,18 @@ public class VueCompte extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+       //sud 
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VuePlanSud().setVisible(true);
+            }
+        });
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
