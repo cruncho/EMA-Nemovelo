@@ -37,5 +37,33 @@ public class ControleurBorne {
              
            
     }
+          
+     public void MAJBorneLoue(Bornes bornes) throws SQLException {
+          
+            StringBuilder sb = new StringBuilder();
+            sb.append("UPDATE `bornes` SET `etat`=1");
+            sb.append(" WHERE `borne_id`=");
+            sb.append(bornes.getId());
+            sb.append(" AND `station_id`=");
+            sb.append(bornes.getStation_id());
+                      
+            
+            GestionBDD gestionBDD = GestionBDD.getInstance();
+            gestionBDD.executeSql(sb.toString());    
+    }
+     
+       public void MAJBorneRestitue(Bornes bornes) throws SQLException {
+          
+            StringBuilder sb = new StringBuilder();
+            sb.append("UPDATE `bornes` SET `etat`=0");
+            sb.append(" WHERE `borne_id`=");
+            sb.append(bornes.getId());
+            sb.append(" AND `station_id`=");
+            sb.append(bornes.getStation_id());
+                      
+            
+            GestionBDD gestionBDD = GestionBDD.getInstance();
+            gestionBDD.executeSql(sb.toString());    
+    }
     
 }

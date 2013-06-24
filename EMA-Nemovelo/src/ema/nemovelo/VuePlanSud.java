@@ -15,6 +15,9 @@ public class VuePlanSud extends javax.swing.JFrame {
      */
     public VuePlanSud() {
         initComponents();
+          this.repaint();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Plan de la Ville");
     }
 
     /**

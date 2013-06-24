@@ -4,10 +4,12 @@
  */
 package ema.nemovelo;
 
-import java.awt.Color;
+
 import java.sql.SQLException;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +20,8 @@ public class VueStation extends javax.swing.JFrame {
     /**
      * Creates new form VueStation
      */
+    
+              
     public VueStation(int id) {
          Station station = Station.getInstance();
          station.setId(id);
@@ -672,13 +676,55 @@ public class VueStation extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        System.out.println("cliquer sur louer");
+        Utilisateurs utilisateur = Utilisateurs.getInstance();
+        
+        if (utilisateur.isLocation_en_cours() == false && utilisateur.getLocation() > 0 )
+        {
+        ControleurLocation controleurLocation = new ControleurLocation();
+        ControleurBorne controleurBorne = new ControleurBorne();
+        try {
+            controleurLocation.miseAJourLocation(true);
+         
+            
+            JOptionPane.showMessageDialog(null,"Debut de votre location");
+        } catch (SQLException ex) {
+            Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         }
+        else 
+        {
+            JOptionPane.showMessageDialog(null,"Votre compte ne permet pas la location d'un vélo");
+        }
+        
+        
+
+  
+        
+        
+        
+        
+        
+        
+        
         
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        System.out.println("cliquer rendre");
+        
+         Utilisateurs utilisateur = Utilisateurs.getInstance();
+        
+        if (utilisateur.isLocation_en_cours() == true  )
+        {
+        ControleurLocation controleurLocation = new ControleurLocation();
+             try {
+                 controleurLocation.retourVelo(false);
+             } catch (SQLException ex) {
+                 Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+        
+        
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
