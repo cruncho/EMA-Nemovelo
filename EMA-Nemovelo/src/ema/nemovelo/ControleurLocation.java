@@ -14,9 +14,7 @@ import java.sql.SQLException;
 public class ControleurLocation {
     
  public void miseAJourLocation(boolean location) throws SQLException {
-          
-     
-     
+
             Utilisateurs utilisateur = Utilisateurs.getInstance();
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `utilisateurs` SET `en_cours`=");

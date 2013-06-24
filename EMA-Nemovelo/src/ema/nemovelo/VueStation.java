@@ -21,8 +21,15 @@ public class VueStation extends javax.swing.JFrame {
      * Creates new form VueStation
      */
     Station station = Station.getInstance();
-      int borne_id =1;
-      Bornes Borne1 = new Bornes(borne_id, station.getId()); 
+    
+    Bornes Borne1 = new Bornes(1,station.getId()); 
+    Bornes Borne2 = new Bornes(2,station.getId());
+    Bornes Borne3 = new Bornes(3,station.getId());
+    Bornes Borne4 = new Bornes(4,station.getId());
+    Bornes Borne5 = new Bornes(5,station.getId());
+    Bornes Borne6 = new Bornes(6,station.getId());
+    Bornes Borne7 = new Bornes(7,station.getId());
+    Bornes Borne8 = new Bornes(8,station.getId());
               
     public VueStation(int id) {
                
@@ -43,24 +50,8 @@ public class VueStation extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Station "+station.getNom());
         jLabel2.setText(station.getNom());
-        
-        
-           
-        borne_id=2;
-        Bornes Borne2 = new Bornes(borne_id,station.getId());
-        borne_id=3;
-        Bornes Borne3 = new Bornes(borne_id,station.getId());
-        borne_id=4;
-        Bornes Borne4 = new Bornes(borne_id,station.getId());
-        borne_id=5;
-        Bornes Borne5 = new Bornes(borne_id,station.getId());
-        borne_id=6;
-        Bornes Borne6 = new Bornes(borne_id,station.getId());
-        borne_id=7;
-        Bornes Borne7 = new Bornes(borne_id,station.getId());
-        borne_id=8;
-        Bornes Borne8 = new Bornes(borne_id,station.getId());
-        
+        jLabel42.setText(String.valueOf(station.getId()));
+     
         ControleurBorne ControleurBorne = new ControleurBorne();
         
           
@@ -186,6 +177,8 @@ public class VueStation extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -645,6 +638,10 @@ public class VueStation extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel41.setText("ID: ");
+
+        jLabel42.setPreferredSize(new java.awt.Dimension(20, 15));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -655,7 +652,11 @@ public class VueStation extends javax.swing.JFrame {
                         .addGap(75, 75, 75)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -667,7 +668,10 @@ public class VueStation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel41)
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -678,103 +682,87 @@ public class VueStation extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        Utilisateurs utilisateur = Utilisateurs.getInstance();
-        
-        if (utilisateur.isLocation_en_cours() == false && utilisateur.getLocation() > 0 )
-        {
-        ControleurLocation controleurLocation = new ControleurLocation();
-        ControleurBorne controleurBorne = new ControleurBorne();
-        try {
-            controleurLocation.miseAJourLocation(true);
-            controleurBorne.MAJBorneLoue(Borne1);
-         
-            
-            JOptionPane.showMessageDialog(null,"Debut de votre location");
-        } catch (SQLException ex) {
-            Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         }
-        else 
-        {
-            JOptionPane.showMessageDialog(null,"Votre compte ne permet pas la location d'un vélo");
-        }
-        
-
-        
+        // Location 
+      retirerVelo(Borne1);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        
-         Utilisateurs utilisateur = Utilisateurs.getInstance();
-        
-        if (utilisateur.isLocation_en_cours() == true  )
-        {
-        ControleurLocation controleurLocation = new ControleurLocation();
-             try {
-                 controleurLocation.retourVelo(false);
-             } catch (SQLException ex) {
-                 Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
-             }
-        }
-        
-        
+         // Retour 
+        restituerVelo(Borne1);
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
+         // Location 
+        retirerVelo(Borne2);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne2);
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
+          
+      retirerVelo(Borne3);
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne3);
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         // TODO add your handling code here:
+      retirerVelo(Borne4);
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne4);
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         // TODO add your handling code here:
+       retirerVelo(Borne5);
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne5);
     }//GEN-LAST:event_jLabel31MouseClicked
 
     private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
         // TODO add your handling code here:
+       retirerVelo(Borne6);
     }//GEN-LAST:event_jLabel33MouseClicked
 
     private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne6);
     }//GEN-LAST:event_jLabel34MouseClicked
 
     private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
         // TODO add your handling code here:
+        retirerVelo(Borne7);
     }//GEN-LAST:event_jLabel36MouseClicked
 
     private void jLabel37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel37MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne7);
     }//GEN-LAST:event_jLabel37MouseClicked
 
     private void jLabel39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel39MouseClicked
         // TODO add your handling code here:
+        retirerVelo(Borne8);
     }//GEN-LAST:event_jLabel39MouseClicked
 
     private void jLabel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel40MouseClicked
         // TODO add your handling code here:
+        restituerVelo(Borne8);
     }//GEN-LAST:event_jLabel40MouseClicked
 
     /**
@@ -809,7 +797,6 @@ public class VueStation extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -820,15 +807,6 @@ public class VueStation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -843,13 +821,11 @@ public class VueStation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -857,10 +833,54 @@ public class VueStation extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
+    
+    
+    private void retirerVelo(Bornes borne) {
+           Utilisateurs utilisateur = Utilisateurs.getInstance();
+
+            if (utilisateur.isLocation_en_cours() == false && utilisateur.getLocation() > 0 )
+            {
+            ControleurLocation controleurLocation = new ControleurLocation();
+            ControleurBorne controleurBorne = new ControleurBorne();
+            try {
+                controleurLocation.miseAJourLocation(true);
+                controleurBorne.MAJBorneLoue(borne);
+                JOptionPane.showMessageDialog(null,"Debut de votre location - Merci de vous déconnecter");
+                                          
+            } catch (SQLException ex) {
+                Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
+            }
+             }
+            else 
+            {
+                JOptionPane.showMessageDialog(null,"Votre compte ne permet pas la location d'un vélo");
+            }
+        }  
+    
+    private void restituerVelo(Bornes borne){
+        
+         Utilisateurs utilisateur = Utilisateurs.getInstance();
+        
+        if (utilisateur.isLocation_en_cours() == true  )
+        {
+        ControleurLocation controleurLocation = new ControleurLocation();
+        ControleurBorne controleurBorne = new ControleurBorne();
+             try {
+                 controleurLocation.retourVelo(false);
+                 controleurBorne.MAJBorneRestitue(borne);
+                 JOptionPane.showMessageDialog(null,"Fin de votre location - Merci de vous déconnecter");
+             } catch (SQLException ex) {
+                 Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+    }
+
 }
+
+
+
+

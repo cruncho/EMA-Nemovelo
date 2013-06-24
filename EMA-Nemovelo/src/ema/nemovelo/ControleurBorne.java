@@ -24,14 +24,9 @@ public class ControleurBorne {
 
             GestionBDD gestionBDD = GestionBDD.getInstance();
             ResultSet result_borne = gestionBDD.selectsql(sb.toString());
-            
-        
-            
+
              while(result_borne.next()){
-                 
-             borne.setEtat(result_borne.getBoolean("etat"));
-                 
-                
+                 borne.setEtat(result_borne.getBoolean("etat"));
               }
             // System.out.println("ID: "+id);
              
