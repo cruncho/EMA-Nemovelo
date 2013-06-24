@@ -4,7 +4,7 @@
  */
 package ema.nemovelo;
 
-import java.sql.ResultSet;
+import java.math.BigInteger;
 import java.sql.SQLException;
 
 /**
@@ -25,8 +25,7 @@ public class ControleurLocation {
             sb.append(System.currentTimeMillis());
             sb.append(" WHERE `user_id`=");
             sb.append(utilisateur.getId());
-                      
-            
+
             GestionBDD gestionBDD = GestionBDD.getInstance();
             gestionBDD.executeSql(sb.toString());    
     }
@@ -34,47 +33,33 @@ public class ControleurLocation {
  public void retourVelo(boolean location) throws SQLException {
           
             Utilisateurs utilisateur = Utilisateurs.getInstance();
+            
+           BigInteger heure = null; 
+           BigInteger seconde = BigInteger.valueOf(1000);
+           BigInteger minute = BigInteger.valueOf(60);
+           
+           heure =  new BigInteger(String.valueOf(System.currentTimeMillis()));
+           heure = heure.subtract(utilisateur.getHeure());
+           heure = heure.divide(seconde);
+           heure = heure.divide(minute);
+           
+           int duree = heure.intValue();
+           duree = duree*-1;
+           
+           System.out.println(heure);
+            
             StringBuilder sb = new StringBuilder();
-            sb.append("UPDATE `utilisateurs` SET `en_cours`=");
-            sb.append(location);
-            sb.append(" WHERE `user_id`=");
+            sb.append("UPDATE `utilisateurs` SET `en_cours`= ");
+            sb.append(location);                
+            sb.append(" WHERE `user_id`= ");
             sb.append(utilisateur.getId());
-            
-            
             
             GestionBDD gestionBDD = GestionBDD.getInstance();
             gestionBDD.executeSql(sb.toString()); 
             
-            miseAJourUtilisateurLocation();
-    }
- 
-  public void miseAJourUtilisateurLocation( ) throws SQLException {
-          
-             Utilisateurs utilisateur = Utilisateurs.getInstance();
-            StringBuilder sb = new StringBuilder();
-            sb.append("SELECT `location`, `heure` FROM `utilisateurs` WHERE `login`='");
-            sb.append(utilisateur.getLogin());
-            sb.append("'");
-
-            GestionBDD gestionBDD = GestionBDD.getInstance();
-            ResultSet result = gestionBDD.selectsql(sb.toString());
-            
-             while(result.next()){
-            int location = result.getInt("location");
-            int heure_location = Integer.parseInt(result.getString("heure"));
-            }
-            
-             
-             
-             
-             
-          //  utilisateur.setLocation((int) (utilisateur.getLocation()-(heure_location-System.currentTimeMillis())));
-            System.out.println(utilisateur.getLocation());
+            ControleurCreditCompte controleurCreditCompte = new ControleurCreditCompte();
+            controleurCreditCompte.crediterCompte(duree);
         
-           
     }
- 
- 
- 
-    
+   
 }

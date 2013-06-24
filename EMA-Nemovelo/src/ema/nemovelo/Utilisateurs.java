@@ -4,6 +4,8 @@
  */
 package ema.nemovelo;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author Clément
@@ -24,6 +26,7 @@ public class Utilisateurs {
    int id;
    int location;
    boolean location_en_cours;
+    BigInteger heure;
 
     public Utilisateurs() {
         
@@ -93,5 +96,14 @@ public class Utilisateurs {
     public void setLocation_en_cours(boolean location_en_cours) {
         this.location_en_cours = location_en_cours;
     }
+
+    public BigInteger getHeure() {
+        return heure;
+    }
+
+    public void setHeure(BigInteger heure) {
+        this.heure = heure;
+    }
+    
 
 }

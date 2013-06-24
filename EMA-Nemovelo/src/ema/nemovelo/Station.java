@@ -23,28 +23,22 @@ public class Station {
 
     public Station() {
         
-    }
-    
+    } 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getNom() {
         return nom;
     }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
-
     public int getBornes() {
         return bornes;
     }
-
     public void setBornes(int bornes) {
         this.bornes = bornes;
     }

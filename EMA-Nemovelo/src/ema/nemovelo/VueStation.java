@@ -20,13 +20,16 @@ public class VueStation extends javax.swing.JFrame {
     /**
      * Creates new form VueStation
      */
-    
+    Station station = Station.getInstance();
+      int borne_id =1;
+      Bornes Borne1 = new Bornes(borne_id, station.getId()); 
               
     public VueStation(int id) {
-         Station station = Station.getInstance();
-         station.setId(id);
-         System.out.println(station.getId());
-         ControleurStation ControleurStation = new ControleurStation();
+               
+   //   Station station = Station.getInstance();     
+      station.setId(id);
+      System.out.println(station.getId());
+      ControleurStation ControleurStation = new ControleurStation();
         try {
          //int retour =  ControleurStation.miseAJourStation(station);
             ControleurStation.miseAJourStation(station);
@@ -42,8 +45,7 @@ public class VueStation extends javax.swing.JFrame {
         jLabel2.setText(station.getNom());
         
         
-        int borne_id =1;
-        Bornes Borne1 = new Bornes(borne_id, station.getId());    
+           
         borne_id=2;
         Bornes Borne2 = new Bornes(borne_id,station.getId());
         borne_id=3;
@@ -684,6 +686,7 @@ public class VueStation extends javax.swing.JFrame {
         ControleurBorne controleurBorne = new ControleurBorne();
         try {
             controleurLocation.miseAJourLocation(true);
+            controleurBorne.MAJBorneLoue(Borne1);
          
             
             JOptionPane.showMessageDialog(null,"Debut de votre location");
@@ -696,16 +699,7 @@ public class VueStation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Votre compte ne permet pas la location d'un vélo");
         }
         
-        
 
-  
-        
-        
-        
-        
-        
-        
-        
         
     }//GEN-LAST:event_jLabel4MouseClicked
 

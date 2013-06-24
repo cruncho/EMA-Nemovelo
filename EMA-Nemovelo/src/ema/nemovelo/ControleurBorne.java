@@ -46,10 +46,10 @@ public class ControleurBorne {
             sb.append(bornes.getId());
             sb.append(" AND `station_id`=");
             sb.append(bornes.getStation_id());
-                      
-            
+
             GestionBDD gestionBDD = GestionBDD.getInstance();
-            gestionBDD.executeSql(sb.toString());    
+            gestionBDD.executeSql(sb.toString());   
+            
     }
      
        public void MAJBorneRestitue(Bornes bornes) throws SQLException {
@@ -60,8 +60,7 @@ public class ControleurBorne {
             sb.append(bornes.getId());
             sb.append(" AND `station_id`=");
             sb.append(bornes.getStation_id());
-                      
-            
+
             GestionBDD gestionBDD = GestionBDD.getInstance();
             gestionBDD.executeSql(sb.toString());    
     }
