@@ -15,7 +15,9 @@ import java.sql.SQLException;
  */
 public class ControleurConnectionUtilisateur {
     
-      public int miseAJourUtilisateur(Utilisateurs utilisateur) throws SQLException {
+      public int miseAJourUtilisateur() throws SQLException {
+          
+           Utilisateurs utilisateur = Utilisateurs.getInstance();
           
             StringBuilder sb = new StringBuilder();
             sb.append("SELECT `user_id`, `login`,`password`,`location`,`nom`, `prenom`,`en_cours`,`heure` FROM `utilisateurs` WHERE `login`='");

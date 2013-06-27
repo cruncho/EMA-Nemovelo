@@ -20,20 +20,24 @@ public class VueStation extends javax.swing.JFrame {
     /**
      * Creates new form VueStation
      */
-    Station station = Station.getInstance();
+   
+   Bornes Borne1 = new Bornes();
+   Bornes Borne2 = new Bornes();
+   Bornes Borne3 = new Bornes();
+   Bornes Borne4 = new Bornes();
+   Bornes Borne5 = new Bornes();
+   Bornes Borne6 = new Bornes();
+   Bornes Borne7 = new Bornes();
+   Bornes Borne8 = new Bornes();
+   
     
-    Bornes Borne1 = new Bornes(1,station.getId()); 
-    Bornes Borne2 = new Bornes(2,station.getId());
-    Bornes Borne3 = new Bornes(3,station.getId());
-    Bornes Borne4 = new Bornes(4,station.getId());
-    Bornes Borne5 = new Bornes(5,station.getId());
-    Bornes Borne6 = new Bornes(6,station.getId());
-    Bornes Borne7 = new Bornes(7,station.getId());
-    Bornes Borne8 = new Bornes(8,station.getId());
+    
+    
               
     public VueStation(int id) {
-               
-   //   Station station = Station.getInstance();     
+      Station station = Station.getInstance();
+      System.out.println("station"+station.getId()); 
+                  
       station.setId(id);
       System.out.println(station.getId());
       ControleurStation ControleurStation = new ControleurStation();
@@ -51,10 +55,35 @@ public class VueStation extends javax.swing.JFrame {
         this.setTitle("Station "+station.getNom());
         jLabel2.setText(station.getNom());
         jLabel42.setText(String.valueOf(station.getId()));
-     
+        
+        
+
+    Borne1.setId(1);
+    Borne1.setStation_id(station.getId());
+
+    Borne2.setId(2);
+    Borne2.setStation_id(station.getId());
+
+    Borne3.setId(3);
+    Borne3.setStation_id(station.getId());
+ 
+    Borne4.setId(4);
+    Borne4.setStation_id(station.getId());
+
+    Borne5.setId(5);
+    Borne5.setStation_id(station.getId());
+
+    Borne6.setId(6);
+    Borne6.setStation_id(station.getId());
+
+    Borne7.setId(7);
+    Borne7.setStation_id(station.getId());
+
+    Borne8.setId(8);
+    Borne8.setStation_id(station.getId());
+        
         ControleurBorne ControleurBorne = new ControleurBorne();
         
-          
             try {
                 
                 ControleurBorne.miseAJourBorne(Borne1);
@@ -65,69 +94,20 @@ public class VueStation extends javax.swing.JFrame {
                 ControleurBorne.miseAJourBorne(Borne6);
                 ControleurBorne.miseAJourBorne(Borne7);
                 ControleurBorne.miseAJourBorne(Borne8);
+                //etatBorne();
+                
                 } 
             catch (SQLException ex) {
                 Logger.getLogger(VueConnection.class.getName()).log(Level.SEVERE, null, ex);
             
         }
-       // verification etat borne 
             
-            // b1
-            if(Borne1.isEtat()== false){
-                jLabel4.setVisible(false);    
-            }
-            else jLabel5.setVisible(false);
- 
-               // b2
-            if(Borne2.isEtat()== false){
-                jLabel12.setVisible(false);
-            }
-            else jLabel13.setVisible(false);
-            
-            //b3
-             
-            if(Borne3.isEtat()== false){
-                jLabel15.setVisible(false);
-            }
-            else jLabel16.setVisible(false);
-            
-            //b4
-            
-            if(Borne4.isEtat()== false){
-                jLabel18.setVisible(false);
-            }
-            else jLabel19.setVisible(false);
-            
-            //b5
-            
-            if(Borne5.isEtat()== false){
-                jLabel30.setVisible(false);
-            }
-            else jLabel31.setVisible(false);
-            
-            //b6
-            
-            if(Borne6.isEtat()== false){
-                jLabel33.setVisible(false);
-            }
-            else jLabel34.setVisible(false);
-            
-            //b7
-            
-            if(Borne7.isEtat()== false){
-                jLabel36.setVisible(false);
-            }
-            else jLabel37.setVisible(false);
-            
-            //b8
-            
-            if(Borne8.isEtat()== false){
-                jLabel39.setVisible(false);
-            }
-            else jLabel40.setVisible(false);
-            
-        
-        
+            //verif bornes
+           etatBorne();
+  
+         System.out.println(Borne8.getId()+" "+Borne8.getStation_id()); 
+      
+
     }
 
     /**
@@ -877,10 +857,70 @@ public class VueStation extends javax.swing.JFrame {
                  Logger.getLogger(VueStation.class.getName()).log(Level.SEVERE, null, ex);
              }
         }
+             else
+        {
+            JOptionPane.showMessageDialog(null,"Votre compte ne permet pas cette action");
+        }
     }
+    
+    private void etatBorne() {
+           // b1
+            if(Borne1.isEtat()== false){
+                jLabel4.setVisible(false);    
+            }
+            else jLabel5.setVisible(false);
+ 
+               // b2
+            if(Borne2.isEtat()== false){
+                jLabel12.setVisible(false);
+            }
+            else jLabel13.setVisible(false);
+            
+            //b3
+             
+            if(Borne3.isEtat()== false){
+                jLabel15.setVisible(false);
+            }
+            else jLabel16.setVisible(false);
+            
+            //b4
+            
+            if(Borne4.isEtat()== false){
+                jLabel18.setVisible(false);
+            }
+            else jLabel19.setVisible(false);
+            
+            //b5
+            
+            if(Borne5.isEtat()== false){
+                jLabel30.setVisible(false);
+            }
+            else jLabel31.setVisible(false);
+            
+            //b6
+            
+            if(Borne6.isEtat()== false){
+                jLabel33.setVisible(false);
+            }
+            else jLabel34.setVisible(false);
+            
+            //b7
+            
+            if(Borne7.isEtat()== false){
+                jLabel36.setVisible(false);
+            }
+            else jLabel37.setVisible(false);
+            
+            //b8
+            
+            if(Borne8.isEtat()== false){
+                jLabel39.setVisible(false);
+            }
+            else jLabel40.setVisible(false);
+        
+    }
+    
+  
+    
 
 }
-
-
-
-

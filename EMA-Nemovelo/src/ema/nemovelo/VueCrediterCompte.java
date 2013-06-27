@@ -147,7 +147,7 @@ public class VueCrediterCompte extends javax.swing.JFrame {
         Utilisateurs utilisateur = Utilisateurs.getInstance();
         ControleurConnectionUtilisateur ControleurConnectionUtilisateur = new ControleurConnectionUtilisateur();
         try {
-         int retour =  ControleurConnectionUtilisateur.miseAJourUtilisateur(utilisateur);
+         int retour =  ControleurConnectionUtilisateur.miseAJourUtilisateur();
         
         } 
         catch (SQLException ex) {

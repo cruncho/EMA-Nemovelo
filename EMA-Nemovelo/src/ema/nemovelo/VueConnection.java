@@ -229,7 +229,7 @@ public class VueConnection extends javax.swing.JFrame {
         
         ControleurConnectionUtilisateur ControleurConnectionUtilisateur = new ControleurConnectionUtilisateur();
         try {
-         retour =  ControleurConnectionUtilisateur.miseAJourUtilisateur(utilisateur);
+         retour =  ControleurConnectionUtilisateur.miseAJourUtilisateur();
          if (retour == 0 )
          {
              JOptionPane.showMessageDialog(null,"Compte Inexistant ou mauvais mot de passe");

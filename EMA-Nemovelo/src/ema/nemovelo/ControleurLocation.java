@@ -44,7 +44,7 @@ public class ControleurLocation {
            int duree = heure.intValue();
            duree = duree*-1;
            
-           System.out.println(heure);
+           //System.out.println(heure);
             
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `utilisateurs` SET `en_cours`= ");

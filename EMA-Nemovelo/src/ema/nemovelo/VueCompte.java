@@ -18,6 +18,9 @@ import java.lang.String;
  * @author Clem
  */
 public class VueCompte extends javax.swing.JFrame {
+    
+    
+    
 
     /**
      * Creates new form VueCompte

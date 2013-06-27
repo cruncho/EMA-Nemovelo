@@ -14,16 +14,17 @@ public class Bornes {
     int id;
     int station_id;
     boolean etat;
-    
-    
 
-    public Bornes(int id, int station_id) {
-        this.setStation_id(station_id);
-        this.setId(id);
-        
+    public Bornes() {
     }
+    
+    
 
-   
+//    public Bornes(int id, int station_id) {
+//        this.id = id;
+//        this.station_id = station_id;
+//    }
+   // getteurs & setteurs  
 
     public int getId() {
         return id;
