@@ -12,8 +12,11 @@ import java.sql.SQLException;
  * @author Clément
  */
 public class ControleurStation {
+    
     public void miseAJourStation(Station station) throws SQLException {
-          
+        
+        // fonction permettant de connaitre nom de la station et le nombre de bornes
+        
             StringBuilder sb = new StringBuilder();
             sb.append("SELECT  `Nom`,`bornes`FROM `stations` WHERE `station_id`='");
             sb.append(station.getId());

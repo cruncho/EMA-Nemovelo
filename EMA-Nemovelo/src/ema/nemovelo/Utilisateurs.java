@@ -12,6 +12,8 @@ import java.math.BigInteger;
  */
 public class Utilisateurs {
     
+    // instance utilisateur defini par un nom,prenom,login,password,fonction,id,location,un booleen location_en_cours et une heure
+    
         private static Utilisateurs instance = new Utilisateurs();
     
     public static Utilisateurs getInstance() {
@@ -26,13 +28,14 @@ public class Utilisateurs {
    int id;
    int location;
    boolean location_en_cours;
-    BigInteger heure;
+   BigInteger heure;
 
     public Utilisateurs() {
         
     }
 
-   
+   // getters & setters
+    
     public String getNom() {
         return nom;
     }

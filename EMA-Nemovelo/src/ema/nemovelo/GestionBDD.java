@@ -14,6 +14,8 @@ import java.sql.*;
  * @author clement.defourneaux
  */
 public class GestionBDD {
+    
+    // instance de la gestion de la BDD
 
     private static GestionBDD instance = new GestionBDD();
     Connection conn;
@@ -23,6 +25,7 @@ public class GestionBDD {
     }
 
     private GestionBDD() {
+        // connection a la BDD
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/nemovelo?user=root");
@@ -35,6 +38,8 @@ public class GestionBDD {
     }
 
     public void executeSql(String sql) {
+        
+        // execution d une commande ne retournant rien
         try {
             PreparedStatement pstnt = conn.prepareStatement(sql);
             pstnt.execute();
@@ -45,6 +50,9 @@ public class GestionBDD {
     }
     
     public ResultSet selectsql(String sql) {
+        
+        // execution commande retournant un resultat
+        
             ResultSet resultats = null;
         try {
         Statement stmt = conn.createStatement();

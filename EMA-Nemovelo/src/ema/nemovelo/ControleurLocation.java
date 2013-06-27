@@ -14,8 +14,12 @@ import java.sql.SQLException;
 public class ControleurLocation {
     
  public void miseAJourLocation(boolean location) throws SQLException {
+     
+     // fonction qui permet de changer l'etat du compte de l utilisateur et d'inserer l heure de la location dans la BDD
+     // change aussi l'objet directement 
 
             Utilisateurs utilisateur = Utilisateurs.getInstance();
+            
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `utilisateurs` SET `en_cours`=");
             sb.append(location);
@@ -25,10 +29,15 @@ public class ControleurLocation {
             sb.append(utilisateur.getId());
 
             GestionBDD gestionBDD = GestionBDD.getInstance();
-            gestionBDD.executeSql(sb.toString());    
+            gestionBDD.executeSql(sb.toString());   
+
+            utilisateur.setLocation_en_cours(true);
     }
  
  public void retourVelo(boolean location) throws SQLException {
+     
+     // fonction qui permet de calculer le temps de location et de changer l'etat du compte utilisateur (BDD+objet)
+     // appelle au controleur creditcompte pour soustraire temps
           
             Utilisateurs utilisateur = Utilisateurs.getInstance();
             
@@ -57,6 +66,8 @@ public class ControleurLocation {
             
             ControleurCreditCompte controleurCreditCompte = new ControleurCreditCompte();
             controleurCreditCompte.crediterCompte(duree);
+            
+           utilisateur.setLocation_en_cours(false);
         
     }
    

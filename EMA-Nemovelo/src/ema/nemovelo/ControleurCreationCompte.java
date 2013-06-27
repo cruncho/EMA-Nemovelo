@@ -13,10 +13,10 @@ public class ControleurCreationCompte {
     
     public void traiterDemandeUtilisateur(Utilisateurs utilisateur) {
        
+       // fonction simple permettant l'ajout d'un utilisateur dans la BDD 
         
-        
-         StringBuilder sb = new StringBuilder();
-          sb.append("insert into `utilisateurs`(`nom`,`prenom`,`login`,`password`) ");
+            StringBuilder sb = new StringBuilder();
+            sb.append("insert into `utilisateurs`(`nom`,`prenom`,`login`,`password`) ");
             sb.append(" values('");
             sb.append(utilisateur.getNom());
             sb.append("','");

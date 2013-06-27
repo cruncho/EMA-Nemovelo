@@ -216,6 +216,10 @@ public class VueConnection extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        
+        // Bouton connexion
+        // on verifie que le login contienne quelque chose
+        
         if (jTextField1.getText().length()== 0){
            JOptionPane.showMessageDialog(null,"Veuillez saisir un nom de compte");
         }
@@ -249,11 +253,7 @@ public class VueConnection extends javax.swing.JFrame {
             
         }
         }
-       
-            
-            
-        
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -263,12 +263,7 @@ public class VueConnection extends javax.swing.JFrame {
     private void jButton1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyTyped
         // TODO add your handling code here:
         
-        System.out.println(jButton1.getKeyListeners().length);
-        
-        if (jButton1.getKeyListeners().length == 46 )
-        {
-            
-        }
+       
     }//GEN-LAST:event_jButton1KeyTyped
 
     /**

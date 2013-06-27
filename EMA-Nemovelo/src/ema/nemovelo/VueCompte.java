@@ -6,12 +6,7 @@ package ema.nemovelo;
 
 import java.awt.Color;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import java.lang.String;
+
 
 /**
  *
@@ -30,36 +25,9 @@ public class VueCompte extends javax.swing.JFrame {
         this.repaint();
         this.setLocationRelativeTo(null);
         this.setTitle("Gestion Compte");
-        Utilisateurs utilisateur = Utilisateurs.getInstance();
-        jLabel2.setText(utilisateur.getPrenom()+" "+utilisateur.getNom());
-        
-        jLabel5.setText(Integer.toString(utilisateur.getLocation()));
-        if (Integer.parseInt(jLabel5.getText())<= 20)
-        {
-            jLabel5.setForeground(Color.red);
-        }
-        
-        if (Integer.parseInt(jLabel5.getText())>= 21)
-        {
-            jLabel5.setForeground(Color.green);
-        }
-        
-        
-       if(utilisateur.isLocation_en_cours()== false)
-       {
-           jLabel9.setText("Libre");
-       }
-       else 
-       {
-           jLabel9.setText("Location en cours");
-       }
-       
-       if (Integer.parseInt(jLabel5.getText())<= 0)
-        {
-            jLabel9.setText("Solde à Zéro Négatif !");
-            jLabel9.setForeground(Color.red);
-        }
-        
+
+        // mise en place elements de la fenetre
+        initalisation();
         
         
     }
@@ -451,4 +419,39 @@ public class VueCompte extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    private void initalisation(){
+        
+        // mise en place des elements de la fenetre
+        
+        Utilisateurs utilisateur = Utilisateurs.getInstance();
+        jLabel2.setText(utilisateur.getPrenom()+" "+utilisateur.getNom());
+        jLabel5.setText(Integer.toString(utilisateur.getLocation()));
+        if (Integer.parseInt(jLabel5.getText())<= 20)
+        {
+            jLabel5.setForeground(Color.red);
+        }
+        
+        if (Integer.parseInt(jLabel5.getText())>= 21)
+        {
+            jLabel5.setForeground(Color.green);
+        }
+        
+        
+       if(utilisateur.isLocation_en_cours()== false)
+       {
+           jLabel9.setText("Libre");
+       }
+       else 
+       {
+           jLabel9.setText("Location en cours");
+       }
+       
+       if (Integer.parseInt(jLabel5.getText())<= 0)
+        {
+            jLabel9.setText("Solde à Zéro Négatif !");
+            jLabel9.setForeground(Color.red);
+        }
+    }
 }
+

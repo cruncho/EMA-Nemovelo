@@ -13,7 +13,11 @@ import java.sql.SQLException;
  */
 public class ControleurBorne {
     
+    
+    
           public void miseAJourBorne(Bornes borne) throws SQLException {
+              
+              // cette fonction retourne l etat dans lequel est une borne passee en parametre
           
             StringBuilder sb = new StringBuilder();
             sb.append("SELECT `etat` FROM `bornes` WHERE `borne_id`='");
@@ -28,13 +32,16 @@ public class ControleurBorne {
              while(result_borne.next()){
                  borne.setEtat(result_borne.getBoolean("etat"));
               }
-            // System.out.println("ID: "+id);
+            
              
            
     }
           
      public void MAJBorneLoue(Bornes bornes) throws SQLException {
           
+         // lors d'une location on change l 'etat de la borne pour dire que la borne peut recevoir un velo
+         // la fonction change dans la base SQL et l'objet en cours  
+       
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `bornes` SET `etat`=0");
             sb.append(" WHERE `borne_id`=");
@@ -46,13 +53,15 @@ public class ControleurBorne {
             gestionBDD.executeSql(sb.toString());  
             
             bornes.setEtat(true);
-            Utilisateurs utilisateur = Utilisateurs.getInstance();
-           utilisateur.setLocation_en_cours(true);
+            
             
     }
      
        public void MAJBorneRestitue(Bornes bornes) throws SQLException {
           
+           // la fonction rechange l etat de la borne pour signifier qu'il y a un velo disponible
+            // la fonction change dans la base SQL et l'objet en cours  
+           
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `bornes` SET `etat`=1");
             sb.append(" WHERE `borne_id`=");
@@ -65,8 +74,7 @@ public class ControleurBorne {
             
             bornes.setEtat(false);
             
-           Utilisateurs utilisateur = Utilisateurs.getInstance();
-           utilisateur.setLocation_en_cours(false);
+         
             
     }
     

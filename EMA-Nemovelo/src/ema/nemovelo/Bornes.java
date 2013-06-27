@@ -10,6 +10,8 @@ package ema.nemovelo;
  */
 public class Bornes {
     
+    
+    //Classe Bornes finie par un id, un station_id et un etat
    
     int id;
     int station_id;
@@ -17,14 +19,6 @@ public class Bornes {
 
     public Bornes() {
     }
-    
-    
-
-//    public Bornes(int id, int station_id) {
-//        this.id = id;
-//        this.station_id = station_id;
-//    }
-   // getteurs & setteurs  
 
     public int getId() {
         return id;

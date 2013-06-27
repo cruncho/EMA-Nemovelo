@@ -17,8 +17,12 @@ public class ControleurConnectionUtilisateur {
     
       public int miseAJourUtilisateur() throws SQLException {
           
-           Utilisateurs utilisateur = Utilisateurs.getInstance();
+          // la fonction va se connecter à la BDD et recuperer les infos sur l'utilisateur courant
+          // retourne un chiffre : 0 pas de pb 
+          // si != 0 : probleme de chargement des donnees
           
+           Utilisateurs utilisateur = Utilisateurs.getInstance();
+           
             StringBuilder sb = new StringBuilder();
             sb.append("SELECT `user_id`, `login`,`password`,`location`,`nom`, `prenom`,`en_cours`,`heure` FROM `utilisateurs` WHERE `login`='");
             sb.append(utilisateur.getLogin());
@@ -33,8 +37,6 @@ public class ControleurConnectionUtilisateur {
             int id = 0;
              while(result.next()){
                  id++;
-              //  System.out.println("Login "+result.getString("login"));
-              //  System.out.println("Password "+result.getString("password"));
                  utilisateur.setId(result.getInt("user_id"));
                  utilisateur.setLocation(result.getInt("location"));
                  utilisateur.setNom(result.getString("nom"));
@@ -43,8 +45,7 @@ public class ControleurConnectionUtilisateur {
                  utilisateur.setHeure(new BigInteger(result.getString("heure")));
 
               }
-            // System.out.println("ID: "+id);
-             
+
            return(id);
     }
     

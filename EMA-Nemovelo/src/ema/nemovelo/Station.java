@@ -10,6 +10,8 @@ package ema.nemovelo;
  */
 public class Station {
     
+    // Instance d'une station definit par id, nom et nombre de bornes
+    
     private static Station instance = new Station();
     
     public static Station getInstance() {
