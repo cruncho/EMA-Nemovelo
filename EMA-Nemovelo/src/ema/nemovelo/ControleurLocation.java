@@ -53,8 +53,7 @@ public class ControleurLocation {
            int duree = heure.intValue();
            duree = duree*-1;
            
-           //System.out.println(heure);
-            
+
             StringBuilder sb = new StringBuilder();
             sb.append("UPDATE `utilisateurs` SET `en_cours`= ");
             sb.append(location);                
@@ -67,7 +66,7 @@ public class ControleurLocation {
             ControleurCreditCompte controleurCreditCompte = new ControleurCreditCompte();
             controleurCreditCompte.crediterCompte(duree);
             
-           utilisateur.setLocation_en_cours(false);
+            utilisateur.setLocation_en_cours(false);
         
     }
    

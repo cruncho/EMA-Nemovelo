@@ -7,12 +7,15 @@ package ema.nemovelo;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Clem
  */
 public class VueCrediterCompte extends javax.swing.JFrame {
+    
+    // Vue pour Crediter son compte
 
     /**
      * Creates new form VueCrediterCompte
@@ -139,7 +142,15 @@ public class VueCrediterCompte extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        
+        // Ajout du nombre de minute choisie
                 
+        if ( Integer.parseInt(jTextField1.getText()) <= 0 ){
+            JOptionPane.showMessageDialog(null,"Vous essayez d'ajouter une valeur négative !");
+            
+        }
+        else {
+        
         ControleurCreditCompte controleurCreditCompte = new ControleurCreditCompte();
         controleurCreditCompte.crediterCompte(Integer.parseInt(jTextField1.getText()));
         ControleurConnectionUtilisateur ControleurConnectionUtilisateur = new ControleurConnectionUtilisateur();
@@ -153,6 +164,8 @@ public class VueCrediterCompte extends javax.swing.JFrame {
             
         }
         
+        // Retour Vue Compte
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
@@ -160,12 +173,10 @@ public class VueCrediterCompte extends javax.swing.JFrame {
             }
             });
              this.dispose();
-        
+        }   
     }//GEN-LAST:event_jButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

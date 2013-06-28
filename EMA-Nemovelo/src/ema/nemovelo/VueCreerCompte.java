@@ -144,6 +144,9 @@ public class VueCreerCompte extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        
+        // Ajout d'un compte
+        
         if (jTextField3.getText().length() >= 3 && jTextField1.getText().length() >= 3 && jTextField2.getText().length() >= 3 && jPasswordField1.getPassword().length >= 3) {
 
         Utilisateurs utilisateur = Utilisateurs.getInstance();
@@ -151,10 +154,10 @@ public class VueCreerCompte extends javax.swing.JFrame {
         utilisateur.setNom(jTextField1.getText());
         utilisateur.setPrenom(jTextField2.getText());
         utilisateur.setPassword(new String (jPasswordField1.getPassword()));
-        System.out.println("Infos : Nouveau compte ajoute. Nom: "+utilisateur.getNom()+" Prenom: "+utilisateur.getPrenom()+" Login: "+utilisateur.getLogin()+" Password: "+utilisateur.getPassword());
+        // System.out.println("Infos : Nouveau compte ajoute. Nom: "+utilisateur.getNom()+" Prenom: "+utilisateur.getPrenom()+" Login: "+utilisateur.getLogin()+" Password: "+utilisateur.getPassword());
         
         ControleurCreationCompte ControleurCreationCompte = new ControleurCreationCompte();
-        ControleurCreationCompte.traiterDemandeUtilisateur(utilisateur);
+        ControleurCreationCompte.ajoutUtilisateur();
         
         
         
@@ -172,37 +175,7 @@ public class VueCreerCompte extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(null,"Veuillez remplir tous les champs avec au moins 3 caracteres");  
     }//GEN-LAST:event_jButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VueCreerCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VueCreerCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VueCreerCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VueCreerCompte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-      //main
-        
-    }
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

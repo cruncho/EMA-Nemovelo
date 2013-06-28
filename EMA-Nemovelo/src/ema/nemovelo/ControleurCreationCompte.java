@@ -11,9 +11,11 @@ package ema.nemovelo;
 public class ControleurCreationCompte {
     
     
-    public void traiterDemandeUtilisateur(Utilisateurs utilisateur) {
+    public void ajoutUtilisateur() {
        
        // fonction simple permettant l'ajout d'un utilisateur dans la BDD 
+        
+            Utilisateurs utilisateur = Utilisateurs.getInstance();
         
             StringBuilder sb = new StringBuilder();
             sb.append("insert into `utilisateurs`(`nom`,`prenom`,`login`,`password`) ");
