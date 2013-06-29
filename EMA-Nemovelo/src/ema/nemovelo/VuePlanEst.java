@@ -8,13 +8,13 @@ package ema.nemovelo;
  *
  * @author Clem
  */
-public class VuePlanNord extends javax.swing.JFrame {
+public class VuePlanEst extends javax.swing.JFrame {
 
     
     /**
      * Creates new form VuePlanNord
      */
-    public VuePlanNord() {
+    public VuePlanEst() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Plan de la ville");
@@ -40,7 +40,7 @@ public class VuePlanNord extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 600));
+        setMinimumSize(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -48,7 +48,7 @@ public class VuePlanNord extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jLabel2.setBounds(550, 170, 16, 16);
+        jLabel2.setBounds(60, 120, 16, 16);
         jLayeredPane1.add(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
@@ -57,7 +57,7 @@ public class VuePlanNord extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jLabel3.setBounds(360, 410, 16, 16);
+        jLabel3.setBounds(350, 440, 16, 16);
         jLayeredPane1.add(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
@@ -66,7 +66,7 @@ public class VuePlanNord extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jLabel4.setBounds(500, 320, 16, 16);
+        jLabel4.setBounds(590, 410, 16, 16);
         jLayeredPane1.add(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
@@ -75,7 +75,7 @@ public class VuePlanNord extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jLabel5.setBounds(240, 470, 16, 16);
+        jLabel5.setBounds(70, 380, 16, 16);
         jLayeredPane1.add(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/gps.png"))); // NOI18N
@@ -84,11 +84,11 @@ public class VuePlanNord extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jLabel6.setBounds(300, 340, 16, 16);
+        jLabel6.setBounds(300, 110, 16, 16);
         jLayeredPane1.add(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/nord.png"))); // NOI18N
-        jLabel1.setBounds(0, 10, 820, 510);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ema/nemovelo/est.png"))); // NOI18N
+        jLabel1.setBounds(0, 10, 680, 510);
         jLayeredPane1.add(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu2.setText("Retour");
@@ -106,16 +106,15 @@ public class VuePlanNord extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -134,31 +133,31 @@ public class VuePlanNord extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
         // borne
-        final int id = 8;
+        final int id = 12;
         invokeStation(id);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        final int id = 6;
+        final int id = 10;
         invokeStation(id);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-         final int id = 9;
+         final int id = 13;
         invokeStation(id);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-         final int id = 5;
+         final int id = 14;
         invokeStation(id);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-         final int id = 7;
+         final int id = 11;
         invokeStation(id);
     }//GEN-LAST:event_jLabel3MouseClicked
 
