@@ -18,8 +18,8 @@ public class ControleurConnectionUtilisateur {
       public int miseAJourUtilisateur() throws SQLException {
           
           // la fonction va se connecter à la BDD et recuperer les infos sur l'utilisateur courant
-          // retourne un chiffre : 0 pas de pb 
-          // si != 0 : probleme de chargement des donnees
+          // retourne un chiffre : 0  probleme de chargement des donnees
+          // si != 0 : pas de pb 
           
            Utilisateurs utilisateur = Utilisateurs.getInstance();
            
