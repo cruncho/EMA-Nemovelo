@@ -67,6 +67,7 @@ public class ControleurLocation {
             controleurCreditCompte.crediterCompte(duree);
             
             utilisateur.setLocation_en_cours(false);
+            utilisateur.setLocation(utilisateur.getLocation()+duree);
         
     }
    

@@ -23,12 +23,13 @@ public class VueCompte extends javax.swing.JFrame {
      */
     public VueCompte() {
         initComponents();
+        initalisation();
         this.repaint();
         this.setLocationRelativeTo(null);
         this.setTitle("Gestion Compte");
 
         // mise en place elements de la fenetre
-        initalisation();
+        
         
         
     }
@@ -453,7 +454,7 @@ public class VueCompte extends javax.swing.JFrame {
        
        if (Integer.parseInt(jLabel5.getText())<= 0)
         {
-            jLabel9.setText("Solde à Zéro Négatif !");
+            jLabel9.setText("Solde à Zéro ou Négatif !");
             jLabel9.setForeground(Color.red);
         }
     }
